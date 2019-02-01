@@ -1,28 +1,46 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { PureComponent } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import 'typeface-roboto';
+import { AppBar, Toolbar, Typography, TextField } from '@material-ui/core';
+import Button, { ButtonProps } from '@material-ui/core/Button';
 
-class App extends Component {
+import styled from './sc';
+
+export class App extends PureComponent {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+        <CssBaseline />
+        <AppBar position="sticky" color="default">
+          <Toolbar>
+            <Typography variant="h6" color="default">
+              Azure Translate
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <TextField
+          required
+          id="filled-required"
+          label="Required"
+          defaultValue="Hello World"
+          margin="normal"
+          variant="filled"
+        />
+        <Button>Default</Button>
+        <Haha>wasafa</Haha>
+        <But size="large" />
+        <div style={{ height: 2000 }}>Hello</div>
+      </>
     );
   }
 }
 
 export default App;
+
+const Haha = styled('h1')<{ children: string }>`
+  background: red;
+`;
+
+const But = styled(Button)`
+  background: blue;
+`;
